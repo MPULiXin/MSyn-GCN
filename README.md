@@ -35,6 +35,8 @@ msyn-gcn-pytorch/
 │   ├── torch_data.py
 │   ├── torch_parser.py
 │   └── train_torch.py
+
+
 Requirements
 
 The code was developed with the following environment:
