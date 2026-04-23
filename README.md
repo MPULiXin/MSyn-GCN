@@ -37,7 +37,7 @@ msyn-gcn-pytorch/
 │   └── train_torch.py
 ```
 
-Requirements
+## Requirements
 
 The code was developed with the following environment:
 
