@@ -35,7 +35,7 @@ msyn-gcn-pytorch/
 │   ├── torch_data.py
 │   ├── torch_parser.py
 │   └── train_torch.py
-
+```
 
 Requirements
 
@@ -49,7 +49,7 @@ openpyxl
 Main Training Command
 
 The main experimental setting used in the paper can be reproduced with the following command:
-
+```
 python msyn-gcn-pytorch/torch_impl/train_torch.py \
   --data_path ./Data/ \
   --dataset Set2Set \
