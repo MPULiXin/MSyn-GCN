@@ -1,0 +1,151 @@
+{
+  "project": "MSyn-GCN",
+  "dataset": {
+    "name": "Set2Set",
+    "symptom_vocabulary_size": 360,
+    "herb_vocabulary_size": 753,
+    "split_counts": {
+      "train": 20625,
+      "val": 2292,
+      "test": 3443
+    },
+    "unique_symptom_sets": {
+      "train": 3830,
+      "val": 759,
+      "test": 1043
+    },
+    "used_symptoms": {
+      "train": 355,
+      "val": 232,
+      "test": 254
+    },
+    "used_herbs": {
+      "train": 734,
+      "val": 537,
+      "test": 558
+    },
+    "graph_source_split": "train",
+    "same_type_min_cooccurrence": 1,
+    "data_split_seed": 42
+  },
+  "categories": {
+    "eight_principles": ["阴", "阳", "表", "里", "寒", "热", "虚", "实"],
+    "zangfu": ["肺", "心包", "心", "大肠", "三焦", "小肠", "胃", "胆", "膀胱", "脾", "肝", "肾"],
+    "qi": ["寒", "热", "温", "凉", "平"],
+    "flavor": ["酸", "苦", "甘", "辛", "咸"]
+  },
+  "model": {
+    "embedding_size": 64,
+    "graph_layer_sizes": [128, 256],
+    "mlp_sizes": [512],
+    "diagnostic_head_hidden_size": 128,
+    "graph_fusion": "concat",
+    "symptom_pooling": "attention",
+    "property_fusion": "gate",
+    "use_property_representation": true,
+    "diagnostic_enabled": true,
+    "dropout": 0.1
+  },
+  "training": {
+    "optimizer": "Adam",
+    "learning_rate": 0.0002,
+    "batch_size": 1024,
+    "max_epochs": 2000,
+    "evaluation_interval": 10,
+    "early_stopping_patience": 10,
+    "early_stopping_min_delta": 0.0001,
+    "weight_decay": 0.01,
+    "lambda_align": 0.03,
+    "lambda_qi": 1.0,
+    "lambda_flavor": 1.0,
+    "lambda_meridian": 1.0,
+    "lambda_marginal": 1.0,
+    "lambda_syndrome": 0.3,
+    "lambda_representation_regularization": 0.01,
+    "initialization_seeds": [2025, 2026, 2027, 2028, 2029]
+  },
+  "evaluation": {
+    "cutoffs": [5, 10, 20],
+    "checkpoint_metric": "precision@5",
+    "test_evaluations_per_run": 1,
+    "active_dimension_threshold": 0.0001
+  },
+  "variants": {
+    "v1_base": {
+      "syndrome_activation": "softmax",
+      "lambda_syndrome": 0.0,
+      "lambda_marginal": 0.0
+    },
+    "v2_sparsemax": {
+      "syndrome_activation": "sparsemax",
+      "lambda_syndrome": 0.0,
+      "lambda_marginal": 0.0
+    },
+    "v3_syndrome": {
+      "syndrome_activation": "sparsemax",
+      "lambda_syndrome": 0.3,
+      "lambda_marginal": 0.0
+    },
+    "v4_full": {
+      "syndrome_activation": "sparsemax",
+      "lambda_syndrome": 0.3,
+      "lambda_marginal": 1.0
+    }
+  },
+  "rule_matrices": {
+    "eight_to_qi": [
+      [0.30, 0.00, 0.00, 0.40, 0.30],
+      [0.00, 0.60, 0.40, 0.00, 0.00],
+      [0.00, 0.00, 0.50, 0.50, 0.00],
+      [0.00, 0.00, 0.00, 0.00, 1.00],
+      [0.00, 0.60, 0.40, 0.00, 0.00],
+      [0.60, 0.00, 0.00, 0.40, 0.00],
+      [0.00, 0.00, 0.50, 0.00, 0.50],
+      [0.00, 0.00, 0.00, 0.00, 1.00]
+    ],
+    "eight_to_flavor": [
+      [0.50, 0.50, 0.00, 0.00, 0.00],
+      [0.00, 0.00, 0.50, 0.50, 0.00],
+      [0.00, 0.00, 0.00, 1.00, 0.00],
+      [0.00, 0.60, 0.00, 0.00, 0.40],
+      [0.00, 0.00, 0.40, 0.60, 0.00],
+      [0.30, 0.70, 0.00, 0.00, 0.00],
+      [0.40, 0.00, 0.60, 0.00, 0.00],
+      [0.00, 0.50, 0.00, 0.30, 0.20]
+    ]
+  },
+  "weak_label_generation": {
+    "provider": "Alibaba Cloud Model Studio (Bailian/DashScope), China region",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "requested_model_id": "qwen-plus",
+    "resolved_snapshot": "qwen-plus-2025-12-01",
+    "snapshot_resolution_basis": "Alibaba Cloud's alias mapping effective 2026-01-20; the local script and metadata recorded only qwen-plus",
+    "generation_started_local": "2026-06-24T22:03:29+08:00",
+    "generation_completed_local": "2026-06-25T01:27:32+08:00",
+    "source_split_counts": {
+      "original_train": 22917,
+      "test": 3443
+    },
+    "post_generation_split_counts": {
+      "train": 20625,
+      "val": 2292,
+      "test": 3443
+    },
+    "temperature_initial": 0.2,
+    "temperature_retry": 0.5,
+    "maximum_attempts": 4
+  },
+  "paper_reference": {
+    "v4_full_mean": {
+      "precision@5": 0.3148,
+      "precision@10": 0.2464,
+      "precision@20": 0.1773,
+      "recall@5": 0.2265,
+      "recall@10": 0.3475,
+      "recall@20": 0.4955,
+      "ndcg@5": 0.4169,
+      "ndcg@10": 0.4921,
+      "ndcg@20": 0.5927
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "model": "qwen-plus",
+  "use_herbs": true,
+  "eight_names": [
+    "阴",
+    "阳",
+    "表",
+    "里",
+    "寒",
+    "热",
+    "虚",
+    "实"
+  ],
+  "zangfu_names": [
+    "肺",
+    "心包",
+    "心",
+    "大肠",
+    "三焦",
+    "小肠",
+    "胃",
+    "胆",
+    "膀胱",
+    "脾",
+    "肝",
+    "肾"
+  ],
+  "leakage_policy": {
+    "training_objective": "train labels only",
+    "early_stopping_and_checkpoint_selection": "no weak labels",
+    "validation_and_test_labels": "descriptive post-training sparsity analysis only"
+  },
+  "source_cache_sha256": "b480aec83f1550582209cadba50aae2c3cfdf9d8aff019e4eeab265b22390e57",
+  "splits": {
+    "train": {
+      "rows": 20625,
+      "data_sha256": "49eb18675cc8a5b9d22e9f1c103910e65eb9665a86155e430af4629c4be21d93",
+      "eight_sha256": "cc61ab1153ef05bd9d2b303485790a1f954343fc56d18640d100f6deb0846801",
+      "zangfu_sha256": "7075ef10509cde5e83d69cca3030ffff6395adf95d72058e7447388641519bc2",
+      "active_eight_at_1e-4": 3.8209939393939396,
+      "active_zangfu_at_1e-4": 3.9486060606060605,
+      "effective_eight": 3.4026355743408203,
+      "effective_zangfu": 3.4550673961639404,
+      "uniform_eight_rows": 0,
+      "uniform_zangfu_rows": 1
+    },
+    "val": {
+      "rows": 2292,
+      "data_sha256": "6212b1b54885905a875531fdd9f3f85b83dbd93c6a65d71e44044bce59b17d20",
+      "eight_sha256": "a0081e1a9f0d0f74716eb8041a651eef569171ba1f5bded624775398548bf77c",
+      "zangfu_sha256": "1aeb4cde5ab730d7a82f8e5e2ccf2c8e09f6d508a724648ade029925caa80cd1",
+      "active_eight_at_1e-4": 3.7971204188481678,
+      "active_zangfu_at_1e-4": 3.951134380453752,
+      "effective_eight": 3.3733320236206055,
+      "effective_zangfu": 3.4602699279785156,
+      "uniform_eight_rows": 0,
+      "uniform_zangfu_rows": 0
+    },
+    "test": {
+      "rows": 3443,
+      "data_sha256": "d63c447446c2e246dcf6390e1e7460036555594ec0f91a94b429888a5ab4f524",
+      "eight_sha256": "b692b0a88a7b2424f8c1d409faaf1c47288f6495b197550fffb9accc269eee21",
+      "zangfu_sha256": "bdbb7b340d2ec0550bd2b2915c65a384a33dc3c27212d9677a40403605c36caa",
+      "active_eight_at_1e-4": 3.8379320360151032,
+      "active_zangfu_at_1e-4": 3.9236131280859716,
+      "effective_eight": 3.419574022293091,
+      "effective_zangfu": 3.434386730194092,
+      "uniform_eight_rows": 0,
+      "uniform_zangfu_rows": 0
+    }
+  }
+}

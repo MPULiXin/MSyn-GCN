@@ -1,0 +1,20 @@
+{
+  "provider": "Alibaba Cloud Model Studio (Bailian/DashScope), China region",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "requested_model_id": "qwen-plus",
+  "resolved_snapshot": "qwen-plus-2025-12-01",
+  "snapshot_resolution_basis": "Alibaba Cloud's official notice states that the qwen-plus stable alias in Beijing and Singapore was upgraded to qwen-plus-2025-12-01 from 2026-01-20; generation occurred on 2026-06-24/25. The request and local meta.json stored only the alias qwen-plus.",
+  "generation_started_local": "2026-06-24T22:03:29+08:00",
+  "generation_completed_local": "2026-06-25T01:27:32+08:00",
+  "original_generator_sha256": "17D63D325BEC1C632CB91403EE6880CEEB5123154A070234E591E3801D0644BA",
+  "original_train_count": 22917,
+  "test_count": 3443,
+  "final_train_count": 20625,
+  "final_validation_count": 2292,
+  "prompt_uses_herbs": true,
+  "temperature_initial": 0.2,
+  "temperature_retry": 0.5,
+  "maximum_attempts": 4,
+  "top_p": "not set; service default",
+  "maximum_output_tokens": "not set; service default"
+}

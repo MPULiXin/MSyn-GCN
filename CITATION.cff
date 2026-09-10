@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite this release. Use its version-specific Zenodo DOI once the archive is published."
+type: software
+title: "MSyn-GCN: a knowledge-guided multi-graph network with LLM weak supervision for herb recommendation"
+version: "1.1.0"
+authors:
+  - family-names: Li
+    given-names: Xin
+    affiliation: "Faculty of Applied Sciences, Macao Polytechnic University, Macao, China"
+  - family-names: Luo
+    given-names: Wuman
+    affiliation: "Faculty of Applied Sciences, Macao Polytechnic University, Macao, China"
+repository-code: "https://github.com/MPULiXin/MSyn-GCN"
+url: "https://github.com/MPULiXin/MSyn-GCN"
+license: MIT
+abstract: >-
+  Research software for knowledge-guided multi-graph herb recommendation
+  with LLM-generated weak syndrome supervision. Includes the core model,
+  fixed study inputs, paper configuration, and implementation checks.
+  MIT applies to the original software; data reuse is governed separately
+  as described in README.md under Data sources and licensing. The package does not contain
+  all original run logs, baseline implementations, or figure-analysis scripts.
+keywords:
+  - herb recommendation
+  - graph neural networks
+  - weak supervision
+  - traditional Chinese medicine
