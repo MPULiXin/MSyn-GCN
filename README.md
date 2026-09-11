@@ -79,13 +79,13 @@ This optional command transmits symptom/herb inputs to the external provider and
 
 **Software.** The original software and its software documentation use the [MIT license](LICENSE), retaining `MPULiXin` as the copyright holder. Dependencies retain their own licenses. The MIT declaration in `CITATION.cff` describes the software, not every bundled data file.
 
-**Set2Set benchmark.** The prescription data and vocabulary mappings derive from Jin Y, Zhang W, He X, Wang X, and Wang X. *Syndrome-aware herb recommendation with multi-graph convolution network.* ICDE 2020, pp. 145–156. The package retains the study's fixed splits but does not supply an independently verified upstream data-license document or redistribution permission. These third-party data are not relicensed under MIT.
+**Set2Set benchmark.** The prescription data and vocabulary mappings were obtained from `Data/Set2Set` in the authors' [ICDE-2020-SMGCN repository](https://github.com/yuanyuansiyuan/ICDE-2020-SMGCN), accompanying Jin Y, Zhang W, He X, Wang X, and Wang X. *Syndrome-aware herb recommendation with multi-graph convolution network.* ICDE 2020, pp. 145–156. That repository publishes an [MIT license](https://github.com/yuanyuansiyuan/ICDE-2020-SMGCN/blob/main/LICENSE), with `Copyright (c) 2021 yuanyuansiyuan`; the upstream notice is reproduced in [LICENSE](LICENSE). This package retains the study's fixed training/validation/test splits, with validation drawn from the original training set. The upstream notice is retained for source-derived materials, not as a new license grant over the added herb-property resources or weak labels.
 
 **Herb properties.** `data/herb_properties.xlsx` supplies per-herb source attribution, Pharmacopoeia status, encoded properties, and notes for all 753 herbs. The model uses the three `herb_property_*.xlsx` matrices in `data/Set2Set/`. Preserve the row-level source attribution; the software license does not grant new rights over third-party source text or database material.
 
 **Weak-label data.** The earlier [weak-label repository](https://github.com/MPULiXin/msyn-gcn-syndrome-labels) displayed CC0-1.0. Any materials already distributed under CC0 retain those terms. Coverage of every file in the present label directory has not been independently verified, so this package does not assign a blanket new CC0 or MIT license to all data.
 
-Before public archiving, the depositor must confirm benchmark/herb-property redistribution rights and the applicable label-license coverage, and retain the relevant notices. Public availability or a source citation alone does not establish redistribution permission. Reusers should consult the original sources' applicable terms.
+The Set2Set source and its published repository license are documented above. Before public archiving, the depositor must still confirm herb-property redistribution rights and the applicable label-license coverage, and retain the relevant notices. Public availability or a source citation alone does not establish redistribution permission. Reusers should consult the original sources' applicable terms.
 
 ## Reproduction scope and citation
 
